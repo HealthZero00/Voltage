@@ -1,15 +1,45 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+# © Жиляков Д.Э., 2026. Все права защищены.
+
+# Сборочные артефакты Gradle
+.gradle/
+build/
+*/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+
+# Локальные настройки конкретной машины
 local.properties
+
+# Файлы IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.navigation/
+
+# Скомпилированные пакеты
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+bin/
+gen/
+out/
+release/
+
+# Ключи подписи релизной сборки
+*.jks
+*.keystore
+!debug.keystore
+
+# Логи и временные файлы
+*.log
+*.hprof
+.DS_Store
+Thumbs.db
+
+# Кэш и служебные файлы Kotlin/Gradle
+.kotlin/
+.cache/
