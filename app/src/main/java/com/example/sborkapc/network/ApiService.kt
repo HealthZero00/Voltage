@@ -4,6 +4,7 @@
 
 package com.example.sborkapc.network
 
+import com.example.sborkapc.BuildConfig
 import com.google.gson.GsonBuilder
 import com.google.gson.annotations.SerializedName
 import okhttp3.OkHttpClient
@@ -157,7 +158,7 @@ interface ApiService {
 }
 
 object RetrofitClient {
-    private const val BASE_URL = "http://144.31.91.218:8000/"
+    private const val BASE_URL = BuildConfig.BASE_URL
 
     val api: ApiService by lazy {
         val logging = HttpLoggingInterceptor().apply {

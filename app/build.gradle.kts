@@ -1,6 +1,9 @@
 /*
 © Жиляков Д.Э., 2026. Все права защищены.
 */
+
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
@@ -15,6 +18,11 @@ android {
         }
     }
 
+    val localProps = Properties().apply {
+        val f = rootProject.file("local.properties")
+        if (f.exists()) load(f.inputStream())
+    }
+
     defaultConfig {
         applicationId = "com.example.sborkapc"
         minSdk = 29
@@ -23,6 +31,11 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField(
+            "String", "BASE_URL",
+            "\"${localProps.getProperty("SERVER_BASE_URL", "http://144.31.91.218:8000/")}\""
+        )
     }
 
     buildTypes {
@@ -40,6 +53,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
