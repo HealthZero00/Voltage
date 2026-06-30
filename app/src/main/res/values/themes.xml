@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+© Жиляков Д.Э., 2026. Все права защищены.
+-->
+<resources>
+
+    <style name="Theme.SborkaPC" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>
