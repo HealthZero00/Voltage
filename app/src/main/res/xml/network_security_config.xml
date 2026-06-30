@@ -3,29 +3,11 @@
 © Жиляков Д.Э., 2026. Все права защищены.
 -->
 
-<!--
-    res/xml/network_security_config.xml
-
-    ПРОБЛЕМА: Android 9+ (API 28+) блокирует незашифрованный HTTP-трафик по умолчанию.
-    Сервер работает на http://10.8.1.4:8000/ (HTTP, не HTTPS).
-    Без этого файла Retrofit не может подключиться к серверу.
-
-    ПОДКЛЮЧЕНИЕ: в AndroidManifest.xml добавь атрибут к тегу <application>:
-        android:networkSecurityConfig="@xml/network_security_config"
-
-    ИТОГ:
-    - HTTP разрешён ТОЛЬКО для 10.8.1.4 (твой сервер в локальной сети)
-    - Для всех остальных доменов остаётся стандартная политика HTTPS
-    - Citilink CDN (HTTPS) работает без изменений
--->
 <network-security-config>
-
-    <!-- Локальный сервер разработки — разрешаем HTTP -->
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="false">144.31.91.218</domain>
     </domain-config>
 
-    <!-- Базовая конфигурация для всего остального — только HTTPS -->
     <base-config cleartextTrafficPermitted="false">
         <trust-anchors>
             <certificates src="system"/>
