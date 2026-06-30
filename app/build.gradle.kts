@@ -34,7 +34,7 @@ android {
 
         buildConfigField(
             "String", "BASE_URL",
-            "\"${localProps.getProperty("SERVER_BASE_URL", "http://144.31.91.218:8000/")}\""
+            "\"${localProps.getProperty("SERVER_BASE_URL", "http://localhost/")}\""
         )
     }
 
